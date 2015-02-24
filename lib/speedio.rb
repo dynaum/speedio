@@ -13,6 +13,7 @@ module Speedio
   autoload :Config    , 'speedio/config'
   autoload :Error     , 'speedio/error'
   autoload :Message   , 'speedio/message'
+  autoload :Receiver  , 'speedio/receiver'
   autoload :Request   , 'speedio/request'
   autoload :Version   , 'speedio/version'
 end

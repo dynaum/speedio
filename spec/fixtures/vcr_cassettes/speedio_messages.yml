@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://23.239.78.121/messages.json?contact_number=554888303054&last_message_timestamp=1424803496
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Host:
+      - 23.239.78.121
+      Http-X-Auth-Token:
+      - "<FILTERED>"
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Date:
+      - Tue, 24 Feb 2015 19:28:19 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1438'
+      Connection:
+      - keep-alive
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"ebc1f4d0b8b360826f8509b7957044dc"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3dd30ad5497c13a56e5d4b464cbd19aa
+      X-Runtime:
+      - '0.057574'
+      X-Rack-Cache:
+      - miss
+      Set-Cookie:
+      - _whatsapp_session=BAh7BkkiD3Nlc3Npb25faWQGOgZFRkkiJTAzMmM5OWUxMDMwNjk4NWQzNGE5OTM5NWUzMmYzMDRkBjsAVA%3D%3D--8077b52c15ec3e8b88d5a5f2ba09503ff6c90df8;
+        path=/; HttpOnly
+    body:
+      encoding: UTF-8
+      string: '{"messages":[{"content":"Opaaa","content_type":"text","created_at":"2015-02-24T15:47:07-03:00","direction":2,"from":"554888303054","id":12095,"media":{"url":null,"phone":{"url":null}},"raw":null,"read":true,"received_at":"2015-02-24T15:47:07-03:00","sent_at":"2015-02-24T15:47:07-03:00","to":"5511985762383","updated_at":"2015-02-24T15:47:07-03:00","w_id":"1424799444-6","created_at_timestamp":1424803627.0,"updated_at_timestamp":1424803627.0},{"content":"Envia
+        dados","content_type":"text","created_at":"2015-02-24T15:44:56-03:00","direction":1,"from":"5511985762383","id":12093,"media":{"url":null,"phone":{"url":null}},"raw":null,"read":true,"received_at":"2015-02-24T15:47:03-03:00","sent_at":"2015-02-24T15:45:02-03:00","to":"554888303054","updated_at":"2015-02-24T15:47:03-03:00","w_id":"message-1424803502-2","created_at_timestamp":1424803496.5976598,"updated_at_timestamp":1424803496.5976598}],"messages_count":{"5511959164056":4,"5511946743777":1},"last_message_timestamp":1424805768.0,"contact_info":{"contact_phone_number":"554888303054","created_at":"2015-02-24T15:26:57-03:00","id":2596,"is_on_whatsapp":true,"is_online":false,"last_message":null,"last_message_time":null,"last_seen_at":"2015-02-24T16:13:39-03:00","name":"Dynaum","nick_name":"5511985762383","picture_url":"/profile_pictures/preview_5511985762383_554888303054.jpg","synched":true,"updated_at":"2015-02-24T16:13:39-03:00","user_phone_number":"5511985762383"}}'
+    http_version: 
+  recorded_at: Tue, 24 Feb 2015 19:28:19 GMT
+recorded_with: VCR 2.8.0

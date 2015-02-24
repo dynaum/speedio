@@ -25,4 +25,19 @@ describe Speedio::Request do
       end
     end
   end
+
+  describe "#messages" do
+    let(:params) { { from: "554888303054", timestamp: '1424803496' } }
+
+    def do_get
+      subject.messages params
+    end
+
+    it "should return a parsed response" do
+      VCR.use_cassette('speedio_messages') do
+        response = do_get
+        response.messages.first['content'].should eq "Opaaa"
+      end
+    end
+  end
 end

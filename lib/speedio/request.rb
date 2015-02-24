@@ -10,7 +10,7 @@ module Speedio
       token:   "/tokens.json"
     }
 
-    attr_reader :params, :response, :base_uri
+    attr_reader :params, :response, :base_uri, :req
 
     def initialize
       @base_uri = URI.parse(Speedio.config.base_url)
@@ -18,23 +18,37 @@ module Speedio
 
     def post(params, type = :message)
       @params = params
+      @req    = request(type)
 
-      req = request(type)
-      req['HTTP-X-AUTH-TOKEN'] = Speedio.config.token
+      request_and_parse
+    end
 
-      @response = session.request(req)
+    def messages(params, type = :message)
+      @params = params
+      @req    = Net::HTTP::Get.new uri(type, get_params)
 
-      if response.code.to_i < 400
-        parse_response
-      else
-        raise Error, 'Invalid request'
-      end
+      request_and_parse
     end
 
     private
 
-    def uri(type)
-      URI.parse("#{base_uri}#{PATH[type]}")
+    def request_and_parse
+      set_token
+
+      @response = session.request(req)
+      return parse_response if response.code.to_i < 400
+
+      raise Error, 'Invalid request'
+    end
+
+    def set_token
+      req['HTTP-X-AUTH-TOKEN'] = Speedio.config.token
+    end
+
+    def uri(type, params = nil)
+      uri = URI.parse("#{base_uri}#{PATH[type]}")
+      uri.query = URI.encode_www_form(params) if params
+      uri
     end
 
     def parse_response
@@ -50,6 +64,13 @@ module Speedio
         hash['message[to]'] = params[:to] if params[:to]
         hash['message[content]'] = params[:content] if params[:content]
       end
+    end
+
+    def get_params
+      {
+        last_message_timestamp: params[:timestamp],
+        contact_number:         params[:from]
+      }
     end
 
     def session
