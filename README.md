@@ -1,6 +1,8 @@
 # Speedio
 
-TODO: Write a gem description
+[![wercker status](https://app.wercker.com/status/72076931d2d2582cb730b64b721e9405/s/master "wercker status")](https://app.wercker.com/project/bykey/72076931d2d2582cb730b64b721e9405)
+
+Ruby library for [Speedio API](http://www.speedio.com.br)
 
 ## Installation
 
