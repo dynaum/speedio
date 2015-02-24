@@ -1,4 +1,4 @@
-box: nafu/ubuntu12.04-ruby2.1.1@1.0.1
+box: h3h/ubuntu12.04-ruby2.1.5-bundler1.7.6@0.0.1
 build:
   steps:
     - bundle-install
