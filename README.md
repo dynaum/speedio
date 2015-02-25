@@ -18,9 +18,25 @@ Or install it yourself as:
 
     $ gem install speedio
 
+## Config
+
+    Speedio.configure do |config|
+      config.base_url # Server url, default: ENV['SPEEDIO_BASE_URL']
+      config.token    # Auth token, default: ENV['SPEEDIO_TOKEN']
+    end
+
 ## Usage
 
-TODO: Write usage instructions here
+### Sending a message
+
+    message = Speedio::Message.new '5511987654321', 'Text message'
+    message.send
+
+### Reading messages
+
+    Speedio::Receiver.all
+
+Will return an object that contains messages, messages_count, last_message_timestamp and contact_info
 
 ## Contributing
 
