@@ -40,6 +40,10 @@ To read messages you have to pass the phone number and the last timestamp.
 
 Will return an object that contains messages, messages_count, last_message_timestamp and contact_info
 
+## AZK
+
+You can use [azk](http://azk.io) to build and test this project.
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/speedio/fork )
