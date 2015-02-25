@@ -20,23 +20,29 @@ Or install it yourself as:
 
 ## Config
 
-    Speedio.configure do |config|
-      config.base_url # Server url, default: ENV['SPEEDIO_BASE_URL']
-      config.token    # Auth token, default: ENV['SPEEDIO_TOKEN']
-    end
+```ruby
+Speedio.configure do |config|
+  config.base_url # Server url, default: ENV['SPEEDIO_BASE_URL']
+  config.token    # Auth token, default: ENV['SPEEDIO_TOKEN']
+end
+```
 
 ## Usage
 
 ### Sending a message
 
-    message = Speedio::Message.new '5511987654321', 'Text message'
-    message.send
+```ruby
+message = Speedio::Message.new '5511987654321', 'Text message'
+message.send
+```
 
 ### Reading messages
 
 To read messages you have to pass the phone number and the last timestamp.
 
-    Speedio::Receiver.new('5511987654321', '123456').all
+```ruby
+Speedio::Receiver.new('5511987654321', '123456').all
+```
 
 Will return an object that contains messages, messages_count, last_message_timestamp and contact_info
 
