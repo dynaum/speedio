@@ -34,7 +34,9 @@ Or install it yourself as:
 
 ### Reading messages
 
-    Speedio::Receiver.all
+To read messages you have to pass the phone number and the last timestamp.
+
+    Speedio::Receiver.new('5511987654321', '123456').all
 
 Will return an object that contains messages, messages_count, last_message_timestamp and contact_info
 
