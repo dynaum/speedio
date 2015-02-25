@@ -22,8 +22,8 @@ Or install it yourself as:
 
 ```ruby
 Speedio.configure do |config|
-  config.base_url # Server url, default: ENV['SPEEDIO_BASE_URL']
-  config.token    # Auth token, default: ENV['SPEEDIO_TOKEN']
+  config.base_url = 'https://server.com' # Server url, default: ENV['SPEEDIO_BASE_URL']
+  config.token    = 'my secret token'    # Auth token, default: ENV['SPEEDIO_TOKEN']
 end
 ```
 
